@@ -2,10 +2,12 @@
 
 [![Build Status](https://travis-ci.org/OldCrowEW/ansible-openstack-mariadb.svg?branch=master)](https://travis-ci.org/OldCrowEW/ansible-openstack-mariadb)
 
-Ansible role to install and configure OpenStack mariadb * associated packages. This follows the install guide for
+Ansible role to install and configure OpenStack mariadb + associated packages. This follows the install guide for
 better or worse :D
 
-*Note:* mysql_secure_installation is not run as part of this initial role
+*Note:*
+    - mysql_secure_installation is not run as part of this initial role
+    - we dont properly pull in dependencies via meta
 
 ## Requirements
 
