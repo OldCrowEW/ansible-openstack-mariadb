@@ -1,0 +1,21 @@
+---
+# tasks file for ansible-openstack-mariadb
+- name: Install OpenStack mariadb packages
+  yum:
+    name: "{{ mariadb_pkgs }}"
+    state: installed
+
+- name: Copy OpenStack mariadb configuration in place
+  template:
+    src: my-cnf-d-openstack-conf.j2
+    dest: /etc/my.cnf.d/openstack.cnf
+  notify: restart mariadb
+
+# Restart if the config has been updated
+- meta: flush_handlers
+
+- name: Ensure mariabd started and enabled
+  service:
+    name: mariadb
+    state: started
+    enabled: true

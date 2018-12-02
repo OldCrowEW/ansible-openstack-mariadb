@@ -1,0 +1,6 @@
+---
+# defaults file for ansible-openstack-mariadb
+mariadb_pkgs:
+  - mariadb
+  - mariadb-server
+  - python2-PyMySQL

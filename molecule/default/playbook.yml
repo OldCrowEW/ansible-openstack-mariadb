@@ -1,0 +1,6 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - { role: "oldcrowew.ansible_openstack_common" }
+    - { role: "ansible-openstack-mariadb" }
